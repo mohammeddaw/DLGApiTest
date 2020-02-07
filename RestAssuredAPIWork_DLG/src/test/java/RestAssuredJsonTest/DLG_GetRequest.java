@@ -26,12 +26,6 @@ public class DLG_GetRequest {
 		.body("address.zipcode",equalTo("92998-3874"))
 		.body("address.geo.lat",equalTo("-37.3159"))
 		.body("address.geo.lng",equalTo("81.1496"));
-		//test ended
-				
-
-		
-		
-		
 	}
 
 }
