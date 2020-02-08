@@ -1,39 +1,141 @@
 package RestAssuredJsonTest;
-import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import java.util.HashMap;
 import java.util.Map;
-import org.testng.annotations.Test;;
+import org.junit.BeforeClass;
+import org.testng.annotations.Test;
+import io.restassured.RestAssured;
 
 public class DLG_POST_Request {
 
+	//public static HashMap car = new HashMap();
 
-	@Test
-	public void postJsonApiData()
-	{
+//	@BeforeClass
+//	public void postJsonApiData()
+//	{
+//
+//			
+//			
+//			RestAssured.baseURI="https://jsonplaceholder.typicode.com";
+//			RestAssured.basePath="/users";
+//		
+//	}
+	
+	public class Car {
 
-			Map<String,String> car = new HashMap<>();
-			car.put("name", "dawood");
-			car.put("username", "audi");
-			car.put("email", "red");
-			car.put("address.street", "red");
-			car.put("address.suite", "red");
-			car.put("address.city", "red");
-			car.put("address.zipcode", "red");
-			car.put("address.geo.lat", "red");
-			car.put("address.geo.lng", "red");
-			car.put("phone", "red");
-			car.put("website", "red");
-			car.put("company.name", "red");
-			car.put("company.catchPhrase", "red");
-			car.put("company.bs", "red");
+		private String name;
 
-			given()
-			.contentType("application/json")
-			.body(car)
-			.when().post("/users").then()
-			.statusCode(200);
+		private String setName(String name)
+		{
+			return this.name;
+		}
+		 
+		private String username;
+		private String setUsername()
+		{
+			return this.username;
+		}
+		private String email;
+		private String setEmail()
+		{
+			return this.email;
+		}
+		private String street;
+		private String setStreet()
+		{
+			return this.street;
+		}
+		private String suite;
+		private String setSuite()
+		{
+			return this.suite;
+		}
+		private String city;
+		private String setCity()
+		{
+			return this.city;
+		}
+		private String zipcode;
+		private String setZipcode()
+		{
+			return this.zipcode;
+		}
+		private int geolat;
+		private int setGeolat()
+		{
+			return this.geolat;
+		}
+		private int geolang;
+		private int setGeolang()
+		{
+			return this.geolang;
+		}
+		
+		private int phone;
+		private int setPhone()
+		{
+			return this.phone;
+		}
+		private String website;
+		private String setWebsite()
+		{
+			return this.website;
+		}
+		private String companyname;
+		private String setCompanyname()
+		{
+			return this.companyname;
+		}
+		private String companycatchphrase;
+		private String setCompanycatchphrase()
+		{
+			return this.companycatchphrase;
+		}
+		private String companybs;
+		private String setCompanybs()
+		{
+			return this.companybs;
+		}
 
 	}
-}
+	
+	
+	@Test
+	public void aCarObjectGoesIntoTheGarage() {
+		Car car = new Car();
+		car.setName("Albina");
+		car.setUsername();
+		car.
+
+
+		given()
+		.contentType("application/json")
+		.body(car)
+		.when().post("/garage/slots").then()
+		.body("empty",equalTo(false))
+		.body("position",lessThan(150));
+	}
+	
+	@Test
+	public void testPostJsonApiData()
+	{
+		given()
+			.contentType("application/json; charset=UTF-8")
+			.body(car)
+		.when()
+			.post()
+			
+		.then()
+			.statusCode(200)
+			.and()
+			.body("SuccessCode",equalTo("OPERATION_SUCCESS"))
+			.and()
+			.body("Message",equalTo("Operation Completed Successfully"));
+
+	}		
+		
+
+	}
+

@@ -5,7 +5,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import org.testng.annotations.Test;;
 
-public class DLG_GetRequest {
+public class DLG_GET_Request {
 	
 	@Test
 	public void getJsonApiData()
@@ -25,7 +25,8 @@ public class DLG_GetRequest {
 		.body("address.city",equalTo("Gwenborough"))
 		.body("address.zipcode",equalTo("92998-3874"))
 		.body("address.geo.lat",equalTo("-37.3159"))
-		.body("address.geo.lng",equalTo("81.1496"));
+		.body("address.geo.lng",equalTo("81.1496"))
+		.log().all();
 	}
 
 }
