@@ -1,25 +1,18 @@
 package RestAssuredJsonTest;
 
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
-import static org.testng.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.junit.BeforeClass;
+
 import org.testng.annotations.Test;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
+
 
 
 public class DLG_POST_DifferentTest
 {
 
-		public static HashMap map = new HashMap();
 		private final String CONTEXT_PATH = "http://jsonplaceholder.typicode.com";
 
 		@Test
@@ -72,14 +65,7 @@ public class DLG_POST_DifferentTest
             then()
             .assertThat().statusCode(201).log().all()
             .assertThat().statusLine("HTTP/1.1 201 Created");
-			
-		
-     
-      
-         
-           
-       
-		
+
 		}
 
 
