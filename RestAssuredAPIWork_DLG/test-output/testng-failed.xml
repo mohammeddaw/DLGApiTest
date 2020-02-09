@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RestAssuredJsonTest.DLG_GetRequest">
+      <class name="RestAssuredJsonTest.DLG_PUT_Request">
         <methods>
-          <include name="getJsonApiData"/>
+          <include name="putData"/>
         </methods>
-      </class> <!-- RestAssuredJsonTest.DLG_GetRequest -->
+      </class> <!-- RestAssuredJsonTest.DLG_PUT_Request -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
