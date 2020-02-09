@@ -68,7 +68,7 @@ public class DLG_POST_DifferentTest
             	contentType("application/json; charset=utf-8").
             	body(userDetails).	
             when().
-            	post(CONTEXT_PATH+"/users").
+            	post(CONTEXT_PATH+"/users/1").
             then()
             .assertThat().statusCode(201).log().all()
             .assertThat().statusLine("HTTP/1.1 201 Created");
